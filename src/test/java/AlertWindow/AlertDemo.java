@@ -19,13 +19,13 @@ public class AlertDemo {
         Alert alertElement = driver.switchTo().alert();
 
         //Getting the alert message:
-        System.out.println(driver.switchTo().alert().getText());
+        System.out.println(alertElement.getText());
 
         alertElement.accept();
 
+
         //Using method chaining:
        // driver.switchTo().alert().accept();
-
 
     }
 }
