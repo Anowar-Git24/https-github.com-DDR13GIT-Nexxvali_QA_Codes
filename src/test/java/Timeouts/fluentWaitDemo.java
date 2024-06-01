@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Wait;
 import java.time.Duration;
 
 public class fluentWaitDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\ddroy\\OneDrive\\Desktop\\Drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -21,22 +21,20 @@ public class fluentWaitDemo {
 
         driver.findElement(By.xpath("//button[text()='Click me to start timer']")).click();
 
-
-
-
-
         Wait<WebDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
 
         WebElement element = wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
-                return driver.findElement(By.xpath("//p[text()='WebDriver']"));
+                WebElement ele = driver.findElement(By.xpath("//p[text()='WebDriver']"));
+                return ele;
             }
         });
 
         System.out.println("Element is displayed? : " + element.isDisplayed());
-
+        Thread.sleep(3000);
+        driver.quit();
     }
 }

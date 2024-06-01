@@ -24,6 +24,7 @@ public class AlertDemo {
         alertElement.accept();
 
 
+
         //Using method chaining:
        // driver.switchTo().alert().accept();
 

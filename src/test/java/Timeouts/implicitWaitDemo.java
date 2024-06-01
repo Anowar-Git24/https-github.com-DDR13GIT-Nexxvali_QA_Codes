@@ -23,7 +23,7 @@ public class implicitWaitDemo {
 
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("deb.nexxvali@gmail.com");
         driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("deb.nexxvali@gmail.com");
-        driver.findElement(By.xpath("//button[@id='']")).click();
+        driver.findElement(By.xpath("//button[text()='']")).click();
 
 
         driver.quit();

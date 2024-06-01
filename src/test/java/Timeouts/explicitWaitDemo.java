@@ -24,7 +24,7 @@ public class explicitWaitDemo {
 
 
         // By default, it  accepts in Seconds
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Here we will wait until element is not visible, if element is visible then it will return web element
         // or else it will throw exception

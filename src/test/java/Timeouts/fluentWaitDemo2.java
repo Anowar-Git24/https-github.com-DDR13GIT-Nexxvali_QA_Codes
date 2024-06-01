@@ -23,14 +23,13 @@ public class fluentWaitDemo2 {
 
         Wait<WebDriver> wait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(3))
+                .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
 
         WebElement element = wait.until(new Function<WebDriver, WebElement>() {
             public WebElement apply(WebDriver driver) {
 
                 WebElement ele = driver.findElement(By.xpath("//p[@id='demo']"));
-
                 String value = ele.getAttribute("innerHTML");
 
                 if (value.equalsIgnoreCase("WebDriver")) {
